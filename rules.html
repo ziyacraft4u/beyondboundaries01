@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boundary Bash Cricket League — Rules & Regulations</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0d2a4f;
+      --card: #ffffff;
+      --muted: #471d0a;
+      --accent: #87520d; /* Orange */
+      --accent-2: #e2b93a; /* warm gold */
+      --soft: #eaf3ff;
+      --radius: 14px;
+      --maxw: 980px;
+    }
+
+    *{box-sizing:border-box}
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg),var(--bg));
+      color:#112;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+      display:flex;justify-content:center;
+      min-height: 100vh; /* instead of height:100% */
+      overflow-y: auto; /* enables scrolling */
+      align-content: justify;
+      font-size: small;
+    }
+
+    .container{
+      width:100%;max-width:var(--maxw);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(17,25,40,0.08);
+      overflow:hidden;
+      border:1px solid rgba(13,75,135,0.06);
+    }
+
+    header{
+      display:flex;gap:18px;align-items:center;padding:28px 32px;background:linear-gradient(90deg,var(--accent),#c6810a);
+      color:#fff;
+    }
+    .logo{
+      width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),#ffd57a);display:flex;align-items:center;justify-content:center;font-weight:800;color:#08223a;font-family:Merriweather;font: size 10px;box-shadow:0 6px 22px rgba(13,75,135,0.12)
+    }
+    header h1{font-size:15px;margin:0;font-weight:700}
+    header p{margin:0 0 0 8px;font-size:13px;font-weight:bold;opacity:0.95}
+
+    main{display:grid;grid-template-columns:280px 1fr;gap:24px;padding:28px}
+
+    nav.toc{
+      padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff, #fbfdff);border:1px solid rgba(13,75,135,0.04);
+      height:fit-content;position:sticky;top:28px;
+    }
+    .toc h3{margin:0 0 8px 0;font-size:15px;color:var(--accent)}
+    .toc ul{padding:0;margin:0;list-style:none}
+    .toc li{margin:8px 0}
+    .toc a{color:var(--muted);text-decoration:none;font-size:14px}
+    .toc a:hover{color:var(--accent)}
+
+    section.doc{
+      background:linear-gradient(180deg,#ffffff,#e4aa5d);
+      padding:22px;border-radius:12px;border:1px solid rgba(13,75,135,0.03);
+    }
+
+    .meta{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .meta .tag{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(13,75,135,0.06);color:var(--accent);font-weight:600}
+    .meta .sub{color:var(--muted);font-size:13px}
+
+    h2{font-family:'Times New Roman', Times, serif;margin:8px 0 12px 0;color:var(--accent);font-weight:300}
+    h3{margin:18px 0 10px 0;color:#0a3b66}
+
+    p{color:var(--muted);line-height:1.5;margin:0 0 10px 0}
+
+    .card{background:linear-gradient(180deg,#fff,#fbfdff);padding:14px;border-radius:10px;border:1px solid rgba(13,75,135,0.03);margin-bottom:12px}
+
+    ul.rules{padding-left:18px;margin:10px 0}
+    ul.rules li{margin:8px 0;color:#102233}
+
+    .rule-number{display:inline-block;width:15px;height:15px;border-radius:8px;background:linear-gradient(180deg,var(--accent),#0a6cc6);color:#fff;text-align:center;line-height:34px;font-weight:500;margin-right:10px}
+
+    .flex-row{display:flex;gap:12px;align-items:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      main{grid-template-columns:1fr;}
+      nav.toc{position:relative;top:auto}
+    }
+
+    /* print */
+    @media print{
+      body{padding:0}
+      header, nav.toc{display:none}
+      .container{box-shadow:none;border:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="document">
+    <header>
+      <div class="logo">BBCL</div>
+      <div>
+        <h1>Boundary Bash Cricket League — Season 01</h1>
+        <p>Venue: SA Sports Cricket Ground, Ajman</p>
+      </div>
+    </header>
+
+    <main>
+      <nav class="toc" aria-label="Table of contents">
+        <div class="toc">
+          <h3>On this page</h3>
+          <ul>
+            <li><a href="#match-duration">1. Match Duration</a></li>
+            <li><a href="#bowling-restrictions">2. Bowling Restrictions</a></li>
+            <li><a href="#powerplay">3. Powerplay Rules</a></li>
+            <li><a href="#player-eligibility">4. Player Eligibility</a></li>
+            <li><a href="#impact-player">5. Impact Player Rule</a></li>
+            <li><a href="#umpire">6. Bowling Action & Umpire</a></li>
+            <li><a href="#format">7. Tournament Format</a></li>
+            <li><a href="#points">8. Points System</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="doc">
+        <div class="meta">
+          <span class="tag"></span>
+          <div class="sub"></div>
+        </div>
+
+        <h2 id="match-duration">Match Duration</h2>
+        <div class="card">
+          <ul class="rules">
+            <li>Each league match will consist of <strong>12 overs per innings</strong>, with a <strong>45-minute</strong> time restriction per innings.</li>
+            <li>Semi-finals and finals will consist of <strong>16 overs per innings</strong>, with a <strong>60-minute</strong> time restriction per innings.</li>
+          </ul>
+        </div>
+
+        <h2 id="bowling-restrictions">Bowling Restrictions</h2>
+        <div class="card">
+          <ul class="rules">
+            <li>A minimum of <strong>five bowlers</strong> must be used each match.</li>
+            <li><strong>League Stage:</strong> Only one bowler may bowl a maximum of <strong>3 overs</strong>.</li>
+            <li><strong>Semi-final & Final:</strong> Only one bowler may bowl a maximum of <strong>4 overs</strong>.</li>
+          </ul>
+        </div>
+
+        <h2 id="powerplay">Powerplay Rules</h2>
+        <div class="card">
+          <ul class="rules">
+            <li><strong>12-over match:</strong> 3-over powerplay — only 2 fielders allowed outside the 30-yard circle.</li>
+            <li><strong>16-over match:</strong> 4-over powerplay — only 2 fielders allowed outside the 30-yard circle.</li>
+            <li>After the powerplay, a maximum of <strong>5 fielders</strong> are allowed outside the circle.</li>
+          </ul>
+        </div>
+
+        <h2 id="player-eligibility">Player Eligibility</h2>
+        <div class="card">
+          <ul class="rules">
+            <li>All players must be from the participating organization.</li>
+            <li>Emirates ID of all players will be verified by the match officials/organizing committee.</li>
+            <li>No outside players are allowed. If found, the team will be disqualified and the opponent declared the winner.</li>
+          </ul>
+        </div>
+
+        <h2 id="impact-player">Impact Player Rule</h2>
+        <div class="card">
+          <ul class="rules">
+            <li>The 12th man can be used as an <strong>Impact Player</strong>, following IPL regulations.</li>
+            <li>The Impact Player must be declared at the time of toss or be present on the ground at the toss.</li>
+          </ul>
+        </div>
+
+        <h2 id="umpire">Bowling Action (Chucking) & Umpire Authority</h2>
+        <div class="card">
+          <ul class="rules">
+            <li>If a batsman suspects chucking, the umpire will review the next delivery; if found guilty it will be called a <strong>no-ball</strong>.</li>
+            <li>Repeated offense: the bowler will be barred from continuing the over and another bowler will complete it.</li>
+            <li>Umpires' decisions are final. Only the captain may discuss clarifications with the umpire; players are not allowed to argue.</li>
+          </ul>
+        </div>
+
+        <!-- condensed remaining sections for readability; full sections included in source file -->
+
+        <h2 id="format">Tournament Format</h2>
+        <div class="card">
+          <ul class="rules">
+            <li>8 teams divided into 2 groups of 4 teams each.</li>
+            <li>Top 2 teams from each group qualify for the semi-finals, followed by the final.</li>
+            <li>In case of a tie in league matches, a super over will decide the winner.</li>
+            <li>In case of equal points - Team with best NRR will be qualified to next level</li>
+          </ul>
+        </div>
+
+        <h2 id="points">Points System</h2>
+        <div class="card">
+          <ul class="rules">
+            <li><strong>Win:</strong> 2 points</li>
+            <li><strong>Tie:</strong> Super Over</li>
+          </ul>
+        </div>
+
+       
+      </section>
+    </main>
+  </div>
+</body>
+</html>

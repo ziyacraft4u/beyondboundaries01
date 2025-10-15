@@ -1,0 +1,453 @@
+/* Professional cricket league theme */
+:root {
+  --bg: #0d2a4f;
+  --text: hsl(0, 12%, 92%);
+  --accent: #0d2a4f;       /* deep navy */
+  --accent-light: #184b88;
+  --gold: #e2b93a;         /* warm gold */
+  --muted: #5a5a5a;
+  --container: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--text);
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo img {
+  height: 70px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+  width: 0;
+  margin-top: 4px;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  background: 
+    url('assets/background.jpg') no-repeat center center / cover;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hero p {
+  color: #f4f4f4;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--gold), #f7d977);
+  color: #0d2a4f;
+  font-weight: 600;
+  padding: 0.8rem 1.4rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+  padding: 3rem 0;
+}
+
+.section h2 {
+  font-family: 'Merriweather', serif;
+  color:#ffffff;
+  margin-bottom: 1rem;
+  border-left: 6px solid var(--gold);
+  padding-left: 0.5rem;
+}
+
+.section p, .section li {
+  color:#ffffff;
+  line-height: 1.7;
+}
+
+/* ---------- ABOUT ---------- */
+#about ul, #about li {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+/* ---------- CONTACT ---------- */
+
+/* CONTACT SECTION */
+.contact-block {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Contact cards — make them smaller and neat */
+.contact-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  padding: 1.2rem 1.5rem;
+  width: 260px; /* ✅ Reduced width */
+  display: flex;
+  align-items: center;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* Icon styling */
+.contact-item i {
+  font-size: 1.5rem;
+  color: #ffb400;
+  margin-right: 0.8rem;
+}
+
+/* Text styling */
+.contact-text h3 {
+  font-size: 1rem;
+  margin: 0 0 0.3rem 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.contact-text p,
+.contact-text a {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  font-size: 0.7rem;
+  color: #555;
+  text-decoration: none;
+}
+
+.contact-text a:hover {
+  color: #000;
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.social-links a {
+  font-size: 1.2rem;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ffb400;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+  .contact-item {
+    width: 100%;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 720px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-item {
+    width: 90%;
+    height: 140px;
+  }
+}
+
+/* Mobile */
+@media (max-width:720px) {
+  .contact-info {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 3px solid var(--gold);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width:720px) {
+  .nav-toggle { display:inline-block; color:#fff; background:none; border:none; font-weight:600; }
+  .main-nav { display:none; background:var(--accent-light); padding:1rem; border-radius:8px; }
+  .main-nav[aria-hidden="false"] { display:block; }
+  .main-nav ul { flex-direction:column; gap:1rem; }
+  .hero { padding:3rem 1rem; }
+}
+
+/* ---------- ACCORDION ---------- */
+.accordion {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: transparent;
+}
+
+.accordion-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(13,42,79,0.08);
+  transition: all 0.3s ease;
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.4rem;
+  font-family: 'Merriweather', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: linear-gradient(90deg, #fff, #fdf8e7);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: linear-gradient(90deg, #fdf8e7, #fff2c7);
+}
+
+.accordion-header i {
+  transition: transform 0.3s ease;
+  color: var(--gold);
+}
+
+.accordion-item.active .accordion-header i {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.4rem;
+  color: var(--muted);
+  transition: max-height 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 1000px; /* enough for your content */
+  padding: 1rem 1.4rem 1.5rem;
+}
+
+.accordion-content ul {
+  padding-left: 1.2rem;
+}
+
+.accordion-content li {
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+/* Call to Action panel */
+.cta-panel {
+  text-align: center;
+  background: linear-gradient(180deg, #fffbe8, #fff4b0);
+  border-radius: 12px;
+}
+
+.cta-panel p {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.cta-panel .btn {
+  background: linear-gradient(90deg, var(--gold), #f7d977);
+  color: var(--accent);
+  border-radius: 30px;
+  padding: 0.9rem 1.8rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-panel .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Accordion highlight when active */
+.accordion-item.active {
+  border: 2px solid #e2b93a;
+  box-shadow: 0 0 12px rgba(226, 185, 58, 0.25);
+}
+
+.accordion-item.active .accordion-header {
+  background: linear-gradient(90deg, #fff9dc, #fff4b0);
+}
+
+.accordion-content ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: var(--text, #050505);
+  line-height: 1.6;
+}
+
+.accordion-content p strong {
+  color: var(--accent, #87520d);
+}
+
+.accordion-content .btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #87520d, #e2b93a);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.accordion-content .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Make Call to Action panel always visible and highlighted */
+
+
+#cta .accordion-header {
+  background: #fff8e1;
+  cursor: default; /* not clickable since it's always open */
+}
+
+#cta .accordion-header i {
+  display: none; /* hide the chevron since it's always open */
+}
+
+#cta .accordion-content {
+  padding: 1.5rem;
+  background: #fffdf5;
+}
+
+#cta .btn {
+  background-color: #ffb400;
+  color: #000;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#cta .btn:hover {
+  background-color: #e09a00;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+/* Smooth transition for mobile */
+@media (max-width: 720px) {
+  .accordion {
+    margin: 2rem 1rem;
+  }
+}
+
