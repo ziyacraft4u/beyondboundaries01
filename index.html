@@ -7,6 +7,15 @@
   <meta name="description" content="Cricket Tournament - schedule, teams and contact." />
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+  <!-- SEO & Social -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0b6cff">
+  <meta property="og:title" content="Boundary Bash Cricket League" />
+  <meta property="og:description" content="Boundary Bash — corporate cricket tournament. Register your team and join the excitement." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/ZiyaCraft_logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
 </head>
 <body>
@@ -199,62 +208,6 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-
-<script>
-  // Accordion open/close behavior
-  document.querySelectorAll('.accordion-header').forEach(button => {
-    button.addEventListener('click', () => {
-      const item = button.parentElement;
-
-      // Prevent "Call to Action" accordion from closing
-      if (item.id === 'cta') {
-        item.classList.add('active'); // stays open
-        return;
-      }
-
-      // Close any open panel (except CTA)
-      document.querySelectorAll('.accordion-item.active').forEach(open => {
-        if (open.id !== 'cta' && open !== item) {
-          open.classList.remove('active');
-        }
-      });
-
-      // Toggle clicked accordion (if not CTA)
-      if (item.id !== 'cta') {
-        item.classList.toggle('active');
-        item.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  // Automatically expand correct accordion when nav or CTA link is clicked
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-      const targetId = link.getAttribute('href').slice(1);
-      const targetItem = document.getElementById(targetId);
-      
-      if (targetItem && targetItem.classList.contains('accordion-item')) {
-        e.preventDefault();
-
-        // Keep CTA always open
-        document.querySelectorAll('.accordion-item.active').forEach(open => {
-          if (open.id !== 'cta') open.classList.remove('active');
-        });
-
-        targetItem.classList.add('active');
-        targetItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  // Keep "Call to Action" open by default
-  window.addEventListener('DOMContentLoaded', () => {
-    const ctaPanel = document.getElementById('cta');
-    if (ctaPanel) {
-      ctaPanel.classList.add('active');
-    }
-  });
-</script>
 
 
 
