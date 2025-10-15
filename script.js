@@ -25,3 +25,57 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }, 800);
   });
 });
+
+// Accordion open/close behavior
+document.querySelectorAll('.accordion-header').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+
+    // Prevent "Call to Action" accordion from closing
+    if (item.id === 'cta') {
+      item.classList.add('active'); // stays open
+      return;
+    }
+
+    // Close any open panel (except CTA)
+    document.querySelectorAll('.accordion-item.active').forEach(open => {
+      if (open.id !== 'cta' && open !== item) {
+        open.classList.remove('active');
+      }
+    });
+
+    // Toggle clicked accordion (if not CTA)
+    if (item.id !== 'cta') {
+      item.classList.toggle('active');
+      item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Automatically expand correct accordion when nav or CTA link is clicked
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const targetId = link.getAttribute('href').slice(1);
+    const targetItem = document.getElementById(targetId);
+    
+    if (targetItem && targetItem.classList.contains('accordion-item')) {
+      e.preventDefault();
+
+      // Keep CTA always open
+      document.querySelectorAll('.accordion-item.active').forEach(open => {
+        if (open.id !== 'cta') open.classList.remove('active');
+      });
+
+      targetItem.classList.add('active');
+      targetItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Keep "Call to Action" open by default
+window.addEventListener('DOMContentLoaded', () => {
+  const ctaPanel = document.getElementById('cta');
+  if (ctaPanel) {
+    ctaPanel.classList.add('active');
+  }
+});

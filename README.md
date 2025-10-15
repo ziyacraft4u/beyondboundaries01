@@ -23,4 +23,29 @@ Run from VS Code (Live Server):
 Notes:
 - If you don't have Node or Python installed, using the Live Server extension is the easiest way to preview the site.
 
+Deployment
+----------
+
+The site is deployed to GitHub Pages at:
+
+https://jgvvdeepika.github.io/ziyacraftcrickets01/
+
+Build status / Pages deploy badge (workflow):
+
+![Deploy](https://github.com/jgvvdeepika/ziyacraftcrickets01/actions/workflows/deploy.yml/badge.svg)
+
+Custom domain (CNAME)
+----------------------
+
+To use a custom domain for your Pages site:
+
+1. Replace the placeholder in the repository `CNAME` file with your domain (e.g. `cricket.example.com` or `www.example.com`) and commit the change.
+2. Configure your DNS provider:
+	- For apex domains (example.com): create an A record pointing to GitHub Pages IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`.
+	- For subdomains (www.example.com): create a CNAME record pointing to `jgvvdeepika.github.io`.
+3. In GitHub, go to the repository Settings → Pages and verify the custom domain. GitHub will provision TLS automatically.
+4. Wait for DNS to propagate (may take a few minutes to a few hours). You can verify with `dig` or an online DNS checker.
+
+If you prefer, remove the `CNAME` file and set the custom domain via the Pages settings UI instead.
+
 License: MIT
