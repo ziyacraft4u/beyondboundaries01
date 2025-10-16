@@ -155,6 +155,12 @@ html, body {
   text-align: center;
 }
 
+/* Remove left gold bar for Contact section header */
+.contact-block h2 {
+  border-left: none;
+  padding-left: 0;
+}
+
 .contact-info {
   display: flex;
   flex-wrap: wrap;
