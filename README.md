@@ -28,7 +28,7 @@ Deployment
 
 The site is deployed to GitHub Pages at:
 
-https://ziyacraft4u.github.io/ziyacraftcrickets01/
+https://ziyacraft4u.github.io/beyondboundaries01/
 
 Build status / Pages deploy badge (workflow):
 
