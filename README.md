@@ -28,11 +28,11 @@ Deployment
 
 The site is deployed to GitHub Pages at:
 
-https://jgvvdeepika.github.io/ziyacraftcrickets01/
+https://ziyacraft4u.github.io/ziyacraftcrickets01/
 
 Build status / Pages deploy badge (workflow):
 
-![Deploy](https://github.com/jgvvdeepika/ziyacraftcrickets01/actions/workflows/deploy.yml/badge.svg)
+![Deploy](https://github.com/ziyacraft4u/ziyacraftcrickets01/actions/workflows/deploy.yml/badge.svg)
 
 Custom domain (CNAME)
 ----------------------
