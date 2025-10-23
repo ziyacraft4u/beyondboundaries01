@@ -9,6 +9,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
     mainNav.setAttribute('aria-hidden', String(expanded));
   });
 
+  // Ensure the nav is visible when resizing to wider viewports.
+  function resetNavOnResize() {
+    if (window.innerWidth > 720) {
+      // remove any inline display so CSS can control visibility on larger screens
+      mainNav.style.display = '';
+      mainNav.setAttribute('aria-hidden', 'false');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  window.addEventListener('resize', resetNavOnResize);
+  // run once on load in case the page opened at a larger size
+  resetNavOnResize();
+
   // footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
